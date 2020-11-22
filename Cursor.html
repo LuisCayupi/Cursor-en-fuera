@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUrsor en/fuera</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        div {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        img {
+            width: 615px;
+            height: 350px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('img').hover(function() {
+                $(this).attr('alt', $(this).attr('src'));
+                $(this).attr('src', $(this).attr('data-alt-src'));
+                $(this).attr('data-alt-src', $(this).attr('alt'));
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <img src="img/ernieballmusicman.jpg" data-alt-src='img/ernieballmusicmanbass.jpg' />
+        <img src="img/fender.jpg" data-alt-src='img/fenderjazzbass.jpg' />
+        <img src="img/gibson.png" data-alt-src='img/gibsonbass.png' />
+        <img src="img/warwick.png" data-alt-src='img/warwickbass.jpg' />
+    </div>
+</body>
+
+</html>
